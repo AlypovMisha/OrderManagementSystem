@@ -4,24 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CatalogService.Domain.Entities
+namespace CatalogService.Core.Entities
 {
     public class Product
     {
         public Guid Id { get; set; }
-
-        public string Name { get; set; }
-
-        public string Description { get; set; }
-
-        public string Category { get; set; }
-
+        public string Name { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public string Category { get; set; } = string.Empty;
         public decimal Price { get; set; }
-
         public int Quantity { get; set; }
-
         public DateTime CreatedDateUtc { get; set; }
-
-        public DateTime UpdatedDateUtc { get; set; }      
+        public DateTime UpdatedDateUtc { get; set; }
     }
 }

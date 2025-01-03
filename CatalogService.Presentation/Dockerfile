@@ -12,19 +12,19 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["CatalogService.API/CatalogService.API.csproj", "CatalogService.API/"]
-RUN dotnet restore "./CatalogService.API/CatalogService.API.csproj"
+COPY ["CatalogService.Presentation/CatalogService.Presentation.csproj", "CatalogService.Presentation/"]
+RUN dotnet restore "./CatalogService.Presentation/CatalogService.Presentation.csproj"
 COPY . .
-WORKDIR "/src/CatalogService.API"
-RUN dotnet build "./CatalogService.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/CatalogService.Presentation"
+RUN dotnet build "./CatalogService.Presentation.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # Этот этап используется для публикации проекта службы, который будет скопирован на последний этап
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./CatalogService.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./CatalogService.Presentation.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 # Этот этап используется в рабочей среде или при запуске из VS в обычном режиме (по умолчанию, когда конфигурация отладки не используется)
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "CatalogService.API.dll"]
+ENTRYPOINT ["dotnet", "CatalogService.Presentation.dll"]
