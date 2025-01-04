@@ -7,6 +7,10 @@ namespace CatalogService.Infrastructure.Data
     {
         public DbSet<Product> Products { get; set; }
 
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
