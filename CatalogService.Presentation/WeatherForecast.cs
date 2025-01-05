@@ -1,4 +1,4 @@
-namespace CatalogService.API
+namespace CatalogService.Presentation
 {
     public class WeatherForecast
     {
