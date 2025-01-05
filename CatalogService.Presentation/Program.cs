@@ -1,5 +1,4 @@
-
-using CatalogService.Infrastructure;
+using CatalogService.Infrastructure.Data;
 
 namespace CatalogService.Presentation
 {

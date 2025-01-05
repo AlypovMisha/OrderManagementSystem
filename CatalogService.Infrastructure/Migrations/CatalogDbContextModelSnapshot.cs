@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace CatalogService.Infrastructure.Migrations
 {
-    [DbContext(typeof(CatalogDbContext))]
+    [DbContext(typeof(CatalogContext))]
     partial class CatalogDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
