@@ -17,7 +17,7 @@ namespace CatalogService.Presentation.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateProduct(ProductDTO product)
+        public async Task<IActionResult> CreateProduct([FromBody] ProductDTO product)
         {
             try
             {
