@@ -7,13 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{44
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CatalogService", "CatalogService", "{5E2B73D2-32DA-455A-9C47-73A5FA79BBA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogService.Core", "CatalogService.Core\CatalogService.Core.csproj", "{C611C7F4-02EE-42A5-B9F8-8FC11D6F2CEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogService.Core", "CatalogService.Core\CatalogService.Core.csproj", "{C611C7F4-02EE-42A5-B9F8-8FC11D6F2CEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogService.Application", "CatalogService.Application\CatalogService.Application.csproj", "{C8020EC1-ED4D-44F8-A19C-C8827A9B8D58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogService.Application", "CatalogService.Application\CatalogService.Application.csproj", "{C8020EC1-ED4D-44F8-A19C-C8827A9B8D58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogService.Infrastructure", "CatalogService.Infrastructure\CatalogService.Infrastructure.csproj", "{8B5C1CF3-0D69-4645-B641-5AE48C31F607}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogService.Infrastructure", "CatalogService.Infrastructure\CatalogService.Infrastructure.csproj", "{8B5C1CF3-0D69-4645-B641-5AE48C31F607}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogService.Presentation", "CatalogService.Presentation\CatalogService.Presentation.csproj", "{1BEFCBFE-22DD-4560-8651-7D0A8807076E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogService.Presentation", "CatalogService.Presentation\CatalogService.Presentation.csproj", "{1BEFCBFE-22DD-4560-8651-7D0A8807076E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogServiceTests", "CatalogServiceTests\CatalogServiceTests.csproj", "{2475E77F-50C2-4E7E-BCF7-374A5B05B3C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{1BEFCBFE-22DD-4560-8651-7D0A8807076E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BEFCBFE-22DD-4560-8651-7D0A8807076E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BEFCBFE-22DD-4560-8651-7D0A8807076E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2475E77F-50C2-4E7E-BCF7-374A5B05B3C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2475E77F-50C2-4E7E-BCF7-374A5B05B3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2475E77F-50C2-4E7E-BCF7-374A5B05B3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2475E77F-50C2-4E7E-BCF7-374A5B05B3C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +53,7 @@ Global
 		{C8020EC1-ED4D-44F8-A19C-C8827A9B8D58} = {5E2B73D2-32DA-455A-9C47-73A5FA79BBA2}
 		{8B5C1CF3-0D69-4645-B641-5AE48C31F607} = {5E2B73D2-32DA-455A-9C47-73A5FA79BBA2}
 		{1BEFCBFE-22DD-4560-8651-7D0A8807076E} = {5E2B73D2-32DA-455A-9C47-73A5FA79BBA2}
+		{2475E77F-50C2-4E7E-BCF7-374A5B05B3C6} = {5E2B73D2-32DA-455A-9C47-73A5FA79BBA2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D45A0285-3CFC-4B8F-9584-5E5B795A9142}

@@ -5,31 +5,76 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CatalogService.Infrastructure.Repositories
 {
-    public class CatalogRepository(CatalogContext catalogContext) : ICatalogRepository
+    internal class CatalogRepository(CatalogContext catalogContext) : ICatalogRepository
     {
-        public Task CreateProductAsync(Product product)
+        public async Task CreateProductAsync(Product product)
         {
-            throw new NotImplementedException();
+            await catalogContext.Products.AddAsync(product);
+            await catalogContext.SaveChangesAsync();
         }
 
-        public Task DeleteByIdAsync(Guid id)
+        public async Task<bool> DeleteByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            Product? product = await catalogContext.Products.FirstOrDefaultAsync(x => x.Id == id);
+            if (product != null)
+            {
+                catalogContext.Products.Remove(product);
+                await catalogContext.SaveChangesAsync();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        public Task<List<Product>> GetAllProductsAsync()
+        public async Task<List<Product>> GetAllProductsAsync()
         {
-            throw new NotImplementedException();
+            return await catalogContext.Products.ToListAsync();
         }
 
-        public Task<Product?> GetByIdAsync(Guid id)
+        public async Task<Product?> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await catalogContext.Products.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public Task UpdateProductAsync(Product product)
+        public async Task<bool> IsProductUniqueAsync(string name)
         {
-            throw new NotImplementedException();
+            return !await catalogContext.Products.AnyAsync(x => x.Name == name);
+        }
+
+        public async Task<bool> UpdateProductAsync(Guid id, Product updateProduct)
+        {
+            Product? product = await catalogContext.Products.FirstOrDefaultAsync(x => x.Id == id);
+            if (product != null)
+            {
+                product.Name = updateProduct.Name;
+                product.Description = updateProduct.Description;
+                product.Price = updateProduct.Price;
+                product.Quantity = updateProduct.Quantity;
+                product.Category = updateProduct.Category;
+                await catalogContext.SaveChangesAsync();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public async Task<bool> UpdateQuantityAsync(Guid id, int quantity)
+        {
+            Product? product = await catalogContext.Products.FirstOrDefaultAsync(x => x.Id == id);
+            if (product != null && product.Quantity >= quantity)
+            {
+                product.Quantity -= quantity;
+                await catalogContext.SaveChangesAsync();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

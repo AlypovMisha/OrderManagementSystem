@@ -1,18 +1,16 @@
-﻿using CatalogService.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CatalogService.Application.DTOs;
+using CatalogService.Core.Entities;
 
 namespace CatalogService.Application.Interfaces
 {
     public interface ICatalogRepository
     {
         Task CreateProductAsync(Product product);
-        Task<List<Product>> GetAllProductsAsync();
         Task<Product?> GetByIdAsync(Guid id);
-        Task UpdateProductAsync(Product product);
-        Task DeleteByIdAsync(Guid id);
+        Task<List<Product>> GetAllProductsAsync();
+        Task<bool> UpdateProductAsync(Guid id, Product updateProduct);
+        Task<bool> DeleteByIdAsync(Guid id);
+        Task<bool> UpdateQuantityAsync(Guid id, int quantity);
+        Task<bool> IsProductUniqueAsync(string name);
     }
 }
