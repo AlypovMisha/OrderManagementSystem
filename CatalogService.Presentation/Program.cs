@@ -2,6 +2,8 @@ using CatalogService.Application.Interfaces;
 using CatalogService.Application.Services;
 using CatalogService.Application.Validations;
 using CatalogService.Infrastructure.Data;
+using CatalogService.Infrastructure.Repositories;
+using Serilog;
 using FluentValidation;
 
 namespace CatalogService.Presentation
@@ -10,19 +12,23 @@ namespace CatalogService.Presentation
     {
         public static void Main(string[] args)
         {
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.File(@"C:\Users\Миша\Desktop\Полигон\logs\log.txt")
+                .CreateLogger();
+
+            Log.Information("Starting the application.");
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
 
+            // Add services to the container.
             builder.Services.AddControllers();
-            builder.Services.AddValidatorsFromAssemblyContaining<ProductValidator>();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddDatabase(builder.Configuration);
-            builder.Services.AddScoped <ICatalogRepository,ICatalogRepository>();
+            builder.Services.AddScoped <ICatalogRepository,CatalogRepository>();
             builder.Services.AddScoped<IProductService, ProductService>();
-
+            builder.Services.AddValidatorsFromAssemblyContaining<ProductValidator>();
+            builder.Host.UseSerilog();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -40,6 +46,7 @@ namespace CatalogService.Presentation
             app.MapControllers();
 
             app.Run();
+
         }
     }
 }

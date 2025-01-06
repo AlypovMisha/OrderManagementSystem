@@ -2,15 +2,18 @@
 using CatalogService.Application.Exceptions;
 using CatalogService.Application.Interfaces;
 using CatalogService.Core.Entities;
+using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace CatalogService.Application.Services
 {
-    public class ProductService(ICatalogRepository catalogRepository) : IProductService
+    public class ProductService(ICatalogRepository catalogRepository, ILogger<ProductService> logger) : IProductService
     {
         public async Task<bool> CreateProductAsync(ProductDTO productDto)
         {
             if (!await catalogRepository.IsProductUniqueAsync(productDto.Name))
             {
+                logger.LogWarning($"Product name already exists: {productDto.Name}");
                 throw new ExceptionNameAlreadyExists();
             }
 

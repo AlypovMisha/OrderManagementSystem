@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CatalogService.Infrastructure.Repositories
 {
-    internal class CatalogRepository(CatalogContext catalogContext) : ICatalogRepository
+    public class CatalogRepository(CatalogContext catalogContext) : ICatalogRepository
     {
         public async Task CreateProductAsync(Product product)
         {
