@@ -1,6 +1,5 @@
 ﻿using CatalogService.Application.DTOs;
 using CatalogService.Application.Interfaces;
-using CatalogService.Application.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CatalogService.Presentation.Controllers
@@ -19,25 +18,37 @@ namespace CatalogService.Presentation.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateProduct([FromBody] ProductDTO product)
         {
-            try
-            {
-                bool isCreated = await _productService.CreateProductAsync(product);
-
-                if (isCreated)
-                {
-                    return Ok();
-                }
-
-                return StatusCode(500, "An error occurred while creating the product.");
-            }
-            catch (ExceptionNameAlreadyExists ex)
-            {
-                return Conflict(new { message = ex.Message });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new { message = ex.Message });
-            }
+            await _productService.CreateProductAsync(product);
+            return Ok(new { message = "Product created successfully." });
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateProduct(Guid id, [FromBody] ProductDTO product)
+        {
+            await _productService.UpdateProductAsync(id, product);
+            return Ok(new { message = "Product updated successfully." });
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProduct(Guid id)
+        {
+            await _productService.DeleteProductAsync(id);
+            return Ok(new { message = "Product deleted successfully." });
+        }
+
+        [HttpPatch("{id}/quantity")]
+        public async Task<IActionResult> UpdateProductQuantity(Guid id, [FromBody] int quantity)
+        {
+            await _productService.UpdateQuantityProductAsync(id, quantity);
+            return Ok(new { message = "Quantity updated successfully." });
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetProductById(Guid id)
+        {
+            var product = await _productService.GetProductByIdAsync(id);
+            return Ok(product);
+        }
+
     }
 }

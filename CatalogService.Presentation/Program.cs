@@ -1,10 +1,8 @@
-using CatalogService.Application.Interfaces;
-using CatalogService.Application.Services;
-using CatalogService.Application.Validations;
+using CatalogService.Application.Extensions;
 using CatalogService.Infrastructure.Data;
-using CatalogService.Infrastructure.Repositories;
+using CatalogService.Presentation.Middleware;
 using Serilog;
-using FluentValidation;
+
 
 namespace CatalogService.Presentation
 {
@@ -24,11 +22,13 @@ namespace CatalogService.Presentation
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddDatabase(builder.Configuration);
-            builder.Services.AddScoped <ICatalogRepository,CatalogRepository>();
-            builder.Services.AddScoped<IProductService, ProductService>();
-            builder.Services.AddValidatorsFromAssemblyContaining<ProductValidator>();
+            builder.Services.AddInfrastructureServices(builder.Configuration);
+            builder.Services.AddApplicationServices();
+
+
             builder.Host.UseSerilog();
+            
+            
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -38,15 +38,15 @@ namespace CatalogService.Presentation
                 app.UseSwaggerUI();
             }
 
+            app.UseExceptionHandlerMiddleware();
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
-
             app.MapControllers();
 
             app.Run();
-
         }
     }
 }

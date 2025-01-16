@@ -1,0 +1,5 @@
+services:
+  catalog_service_webapi:
+    build:
+     context: .
+     dockerfile: Dockerfile

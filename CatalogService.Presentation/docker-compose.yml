@@ -1,0 +1,24 @@
+services:
+  catalog_service_webapi:
+    build:
+      context: ..
+      dockerfile: CatalogService.Presentation/Dockerfile
+    ports:
+      - "8082:8080"
+    container_name: catalog_web_api
+    depends_on:
+        - db 
+  db:
+    image: postgres:latest
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 210305
+      POSTGRES_DB: CatalogDb
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    container_name: db_postgresql_container
+volumes:
+  db_data:
+  
