@@ -1,4 +1,6 @@
-﻿namespace CatalogService.Application.DTOs
+﻿using CatalogService.Core.Entities;
+
+namespace CatalogService.Application.DTOs
 {
     public class ProductDTO
     {

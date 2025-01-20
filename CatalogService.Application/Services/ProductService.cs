@@ -51,51 +51,50 @@ namespace CatalogService.Application.Services
             else
             {
                 _logger.LogWarning($"Product with ID {id} is not found");
-                throw new KeyNotFoundException($"Product with ID {id} not found.");
+                throw new ProductNotFoundException($"Product with ID {id} not found.");
             }
         }
 
         public async Task UpdateProductAsync(Guid id, ProductDTO productDto)
         {
-            var product = await _catalogRepository.GetByIdAsync(id);
+            var updateProduct = await _catalogRepository.GetByIdAsync(id);
 
-            if (product == null)
+            if (updateProduct == null)
             {
                 _logger.LogWarning($"Product with ID {id} is not found");
-                throw new KeyNotFoundException($"Product with ID {id} not found.");
+                throw new ProductNotFoundException($"Product with ID {id} not found.");
             }
 
-            product.Name = productDto.Name;
-            product.Description = productDto.Description;
-            product.Category = productDto.Category;
-            product.Price = productDto.Price;
-            product.Quantity = productDto.Quantity;
-            product.UpdatedDateUtc = DateTime.UtcNow;
+            updateProduct.Name = productDto.Name;
+            updateProduct.Description = productDto.Description;
+            updateProduct.Category = productDto.Category;
+            updateProduct.Price = productDto.Price;
+            updateProduct.Quantity = productDto.Quantity;
+        
 
-            await _catalogRepository.SaveChangesAsync();
+            await _catalogRepository.UpdateProductAsync(updateProduct);
         }
 
 
         public async Task UpdateQuantityProductAsync(Guid id, int quantity)
         {
-            var product = await _catalogRepository.GetByIdAsync(id);
+            var updateProduct = await _catalogRepository.GetByIdAsync(id);
 
-            if (product == null)
+            if (updateProduct == null)
             {
                 _logger.LogWarning($"Product with ID {id} is not found");
-                throw new KeyNotFoundException($"Product with ID {id} not found.");
+                throw new ProductNotFoundException($"Product with ID {id} not found.");
             }
             
-            if (product.Quantity < quantity)
+            if (updateProduct.Quantity < quantity)
             {
-                _logger.LogWarning($"The quantity of the product is insufficient.");
-                throw new InvalidOperationException("Insufficient quantity.");
+                _logger.LogWarning($"The quantity of the updateProduct is insufficient.");
+                throw new QuantityException("Insufficient quantity.");
             }
 
-            product.Quantity -= quantity;
-            product.UpdatedDateUtc = DateTime.UtcNow;
+            updateProduct.Quantity -= quantity;
 
-            await _catalogRepository.SaveChangesAsync();
+            await _catalogRepository.UpdateProductAsync(updateProduct);
         }
 
         public async Task<ProductDTO> GetProductByIdAsync(Guid id)
@@ -104,7 +103,7 @@ namespace CatalogService.Application.Services
 
             if (product == null)
             {
-                throw new KeyNotFoundException($"Product with ID {id} not found.");
+                throw new ProductNotFoundException($"Product with ID {id} not found.");
             }
 
             return new ProductDTO

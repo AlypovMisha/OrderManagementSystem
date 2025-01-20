@@ -1,7 +1,8 @@
 ﻿using CatalogService.Core.Entities;
+using CatalogService.Infrastructure.ConfigurationDB;
 using Microsoft.EntityFrameworkCore;
 
-namespace CatalogService.Infrastructure.Data
+namespace CatalogService.Infrastructure.ConfigurationDB
 {
     public class CatalogContext(DbContextOptions<CatalogContext> options) : DbContext(options)
     {

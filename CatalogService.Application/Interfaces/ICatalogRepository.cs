@@ -10,6 +10,6 @@ namespace CatalogService.Application.Interfaces
         Task DeleteProductAsync(Product product);
         Task<bool> IsProductUniqueAsync(string name);
         Task SaveChangesAsync();
-
+        Task UpdateProductAsync(Product updateProduct);
     }
 }

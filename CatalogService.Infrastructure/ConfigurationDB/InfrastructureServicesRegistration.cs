@@ -1,10 +1,11 @@
 ﻿using CatalogService.Application.Interfaces;
+using CatalogService.Infrastructure.ConfigurationDB;
 using CatalogService.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CatalogService.Infrastructure.Data
+namespace CatalogService.Infrastructure.ConfigurationDB
 {
     public static class InfrastructureServicesRegistration
     {

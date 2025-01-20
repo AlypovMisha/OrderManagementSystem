@@ -1,5 +1,5 @@
 using CatalogService.Application.Extensions;
-using CatalogService.Infrastructure.Data;
+using CatalogService.Infrastructure.ConfigurationDB;
 using CatalogService.Presentation.Middleware;
 using Serilog;
 

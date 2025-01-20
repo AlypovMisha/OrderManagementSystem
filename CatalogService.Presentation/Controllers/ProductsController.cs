@@ -19,28 +19,29 @@ namespace CatalogService.Presentation.Controllers
         public async Task<IActionResult> CreateProduct([FromBody] ProductDTO product)
         {
             await _productService.CreateProductAsync(product);
-            return Ok(new { message = "Product created successfully." });
+            return Ok(product);
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProduct(Guid id, [FromBody] ProductDTO product)
         {
             await _productService.UpdateProductAsync(id, product);
-            return Ok(new { message = "Product updated successfully." });
+            return Ok(product);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(Guid id)
         {
             await _productService.DeleteProductAsync(id);
-            return Ok(new { message = "Product deleted successfully." });
+            return NoContent();
         }
 
         [HttpPatch("{id}/quantity")]
         public async Task<IActionResult> UpdateProductQuantity(Guid id, [FromBody] int quantity)
         {
             await _productService.UpdateQuantityProductAsync(id, quantity);
-            return Ok(new { message = "Quantity updated successfully." });
+            var product = await _productService.GetProductByIdAsync(id);
+            return Ok(product);
         }
 
         [HttpGet("{id}")]

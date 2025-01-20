@@ -1,6 +1,6 @@
 ﻿using CatalogService.Application.Interfaces;
 using CatalogService.Core.Entities;
-using CatalogService.Infrastructure.Data;
+using CatalogService.Infrastructure.ConfigurationDB;
 using Microsoft.EntityFrameworkCore;
 
 namespace CatalogService.Infrastructure.Repositories
@@ -36,6 +36,13 @@ namespace CatalogService.Infrastructure.Repositories
 
         public async Task SaveChangesAsync()
         {
+            await catalogContext.SaveChangesAsync();
+        }
+
+        public async Task UpdateProductAsync(Product updateProduct)
+        {
+            updateProduct.UpdatedDateUtc = DateTime.UtcNow;
+            catalogContext.Products.Update(updateProduct);
             await catalogContext.SaveChangesAsync();
         }
     }

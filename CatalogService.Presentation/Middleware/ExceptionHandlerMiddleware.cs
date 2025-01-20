@@ -44,11 +44,11 @@ namespace CatalogService.Presentation.Middleware
                     code = HttpStatusCode.Conflict;
                     result = JsonSerializer.Serialize(new { error = "Product name already exists." });
                     break;
-                case KeyNotFoundException:
+                case ProductNotFoundException:
                     code = HttpStatusCode.NotFound;
-                    result = JsonSerializer.Serialize(new { error = "Resource not found." });
+                    result = JsonSerializer.Serialize(new { error = "Product not found." });
                     break;
-                case InvalidOperationException:
+                case QuantityException:
                     code = HttpStatusCode.BadRequest;
                     result = JsonSerializer.Serialize(new { error = "The requested quantity is more than what is in stock." });
                     break;
