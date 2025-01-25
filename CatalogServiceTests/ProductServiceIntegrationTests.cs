@@ -2,7 +2,6 @@
 using CatalogService.Application.Exceptions;
 using CatalogService.Application.Services;
 using CatalogService.Application.Validations;
-using CatalogService.Core.Entities;
 using CatalogService.Infrastructure.ConfigurationDB;
 using CatalogService.Infrastructure.Repositories;
 using FluentValidation;
@@ -57,8 +56,8 @@ namespace CatalogServiceTests
             // Assert
             var product = await _productService.GetProductByIdAsync(id);
             Assert.NotNull(product);
-            Assert.Equal("Test product", product.Name);
-            Assert.Equal(100, product.Price);
+            Assert.Equal(productDto.Name, product.Name);
+            Assert.Equal(productDto.Price, product.Price);
         }
 
         [Fact]
@@ -262,16 +261,18 @@ namespace CatalogServiceTests
                 CreatedDateUtc = DateTime.UtcNow,
                 UpdatedDateUtc = DateTime.UtcNow,
             };
+            int quantity = productDto.Quantity;
+            int subtractedNumber = 10;
 
             await _productService.CreateProductAsync(productDto);
             // Act
 
-            await _productService.UpdateQuantityProductAsync(productDto.Id, 10);
+            await _productService.UpdateQuantityProductAsync(productDto.Id, subtractedNumber);
 
             // Assert
             var updatedProduct = await _productService.GetProductByIdAsync(productDto.Id);
             Assert.NotNull(updatedProduct);
-            Assert.Equal(50, updatedProduct.Quantity);
+            Assert.Equal(quantity - subtractedNumber, updatedProduct.Quantity);
         }
 
         [Fact]

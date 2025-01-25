@@ -2,7 +2,7 @@
 {
     public class QuantityException : Exception
     {
-        public QuantityException() : base("Insufficient quantity of product") 
+        public QuantityException() : base("Insufficient quantity of product")
         {
         }
 

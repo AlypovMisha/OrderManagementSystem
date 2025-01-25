@@ -6,7 +6,7 @@ namespace CatalogService.Application.Interfaces
     {
         Task CreateProductAsync(Product product);
         Task<Product?> GetByIdAsync(Guid id);
-        Task<List<Product>> GetAllProductsAsync();        
+        Task<List<Product>> GetAllProductsAsync();
         Task DeleteProductAsync(Product product);
         Task<bool> IsProductUniqueAsync(string name);
         Task SaveChangesAsync();

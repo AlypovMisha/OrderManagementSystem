@@ -11,7 +11,7 @@ namespace CatalogService.Application.Extensions
         public static void AddApplicationServices(this IServiceCollection services)
         {
             services.AddScoped<IProductService, ProductService>();
-            services.AddValidatorsFromAssemblyContaining<ProductValidator>();            
+            services.AddValidatorsFromAssemblyContaining<ProductValidator>();
         }
     }
 }

@@ -2,13 +2,9 @@
 using CatalogService.Application.Exceptions;
 using CatalogService.Application.Interfaces;
 using CatalogService.Application.Services;
-using CatalogService.Application.Validations;
 using CatalogService.Core.Entities;
-using CatalogService.Infrastructure.ConfigurationDB;
-using CatalogService.Infrastructure.Repositories;
 using FluentValidation;
 using FluentValidation.Results;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Moq;
 

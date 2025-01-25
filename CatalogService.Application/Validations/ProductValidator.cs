@@ -6,7 +6,7 @@ namespace CatalogService.Application.Validations
     public class ProductValidator : AbstractValidator<ProductDTO>
     {
         public ProductValidator()
-        {            
+        {
             RuleFor(x => x.Name)
                 .NotEmpty().WithMessage("Name is required.")
                 .MaximumLength(100).WithMessage("Name must not exceed 100 characters.");

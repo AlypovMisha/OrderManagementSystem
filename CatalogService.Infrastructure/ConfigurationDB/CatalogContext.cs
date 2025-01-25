@@ -1,5 +1,4 @@
 ﻿using CatalogService.Core.Entities;
-using CatalogService.Infrastructure.ConfigurationDB;
 using Microsoft.EntityFrameworkCore;
 
 namespace CatalogService.Infrastructure.ConfigurationDB

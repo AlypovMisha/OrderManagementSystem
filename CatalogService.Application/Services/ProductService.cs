@@ -71,7 +71,7 @@ namespace CatalogService.Application.Services
             updateProduct.Category = productDto.Category;
             updateProduct.Price = productDto.Price;
             updateProduct.Quantity = productDto.Quantity;
-        
+
 
             await _catalogRepository.UpdateProductAsync(updateProduct);
             return new ProductDTO(updateProduct);
@@ -86,7 +86,7 @@ namespace CatalogService.Application.Services
                 _logger.LogWarning($"Product with ID {id} is not found");
                 throw new ProductNotFoundException($"Product with ID {id} not found.");
             }
-            
+
             if (updateProduct.Quantity < quantity)
             {
                 _logger.LogWarning($"The quantity of the updateProduct is insufficient.");

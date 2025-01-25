@@ -27,8 +27,8 @@ namespace CatalogService.Presentation
 
 
             builder.Host.UseSerilog();
-            
-            
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

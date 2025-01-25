@@ -26,7 +26,7 @@ namespace CatalogService.Application.DTOs
         }
 
         public ProductDTO()
-        {            
+        {
         }
     }
 }
