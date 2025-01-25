@@ -8,7 +8,7 @@ namespace CatalogService.Application.Services
 {
     public class ProductService(ICatalogRepository _catalogRepository, ILogger<ProductService> _logger, IValidator<ProductDTO> _productValidator) : IProductService
     {
-        public async Task CreateProductAsync(ProductDTO productDto)
+        public async Task<ProductDTO> CreateProductAsync(ProductDTO productDto)
         {
             var validationResult = await _productValidator.ValidateAsync(productDto);
             if (!validationResult.IsValid)
@@ -36,6 +36,7 @@ namespace CatalogService.Application.Services
             };
 
             await _catalogRepository.CreateProductAsync(product);
+            return new ProductDTO(product);
         }
 
 
@@ -55,7 +56,7 @@ namespace CatalogService.Application.Services
             }
         }
 
-        public async Task UpdateProductAsync(Guid id, ProductDTO productDto)
+        public async Task<ProductDTO> UpdateProductAsync(Guid id, ProductDTO productDto)
         {
             var updateProduct = await _catalogRepository.GetByIdAsync(id);
 
@@ -73,8 +74,8 @@ namespace CatalogService.Application.Services
         
 
             await _catalogRepository.UpdateProductAsync(updateProduct);
+            return new ProductDTO(updateProduct);
         }
-
 
         public async Task UpdateQuantityProductAsync(Guid id, int quantity)
         {

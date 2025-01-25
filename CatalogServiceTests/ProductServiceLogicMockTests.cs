@@ -2,22 +2,27 @@
 using CatalogService.Application.Exceptions;
 using CatalogService.Application.Interfaces;
 using CatalogService.Application.Services;
+using CatalogService.Application.Validations;
 using CatalogService.Core.Entities;
+using CatalogService.Infrastructure.ConfigurationDB;
+using CatalogService.Infrastructure.Repositories;
 using FluentValidation;
 using FluentValidation.Results;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Moq;
 
 namespace CatalogServiceTests
 {
-    public class ProductServiceTests
+    public class ProductServiceLogicMockTests
     {
+
         private readonly Mock<ILogger<ProductService>> _loggerMock;
         private readonly Mock<IValidator<ProductDTO>> _productValidatorMock;
         private readonly Mock<ICatalogRepository> _catalogRepositoryMock;
         private readonly ProductService _productService;
 
-        public ProductServiceTests()
+        public ProductServiceLogicMockTests()
         {
             _loggerMock = new Mock<ILogger<ProductService>>();
             _productValidatorMock = new Mock<IValidator<ProductDTO>>();

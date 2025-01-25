@@ -18,15 +18,15 @@ namespace CatalogService.Presentation.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateProduct([FromBody] ProductDTO product)
         {
-            await _productService.CreateProductAsync(product);
-            return Ok(product);
+            var updatedProduct = await _productService.CreateProductAsync(product);
+            return Ok(updatedProduct);
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProduct(Guid id, [FromBody] ProductDTO product)
         {
-            await _productService.UpdateProductAsync(id, product);
-            return Ok(product);
+            var updatedProduct = await _productService.UpdateProductAsync(id, product);
+            return Ok(updatedProduct);
         }
 
         [HttpDelete("{id}")]
