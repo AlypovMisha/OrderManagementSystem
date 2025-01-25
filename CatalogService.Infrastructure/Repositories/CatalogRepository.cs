@@ -1,6 +1,6 @@
 ﻿using CatalogService.Application.Interfaces;
 using CatalogService.Core.Entities;
-using CatalogService.Infrastructure.Data;
+using CatalogService.Infrastructure.ConfigurationDB;
 using Microsoft.EntityFrameworkCore;
 
 namespace CatalogService.Infrastructure.Repositories
@@ -13,19 +13,10 @@ namespace CatalogService.Infrastructure.Repositories
             await catalogContext.SaveChangesAsync();
         }
 
-        public async Task<bool> DeleteByIdAsync(Guid id)
+        public async Task DeleteProductAsync(Product product)
         {
-            Product? product = await catalogContext.Products.FirstOrDefaultAsync(x => x.Id == id);
-            if (product != null)
-            {
-                catalogContext.Products.Remove(product);
-                await catalogContext.SaveChangesAsync();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            catalogContext.Remove(product);
+            await catalogContext.SaveChangesAsync();
         }
 
         public async Task<List<Product>> GetAllProductsAsync()
@@ -43,38 +34,16 @@ namespace CatalogService.Infrastructure.Repositories
             return !await catalogContext.Products.AnyAsync(x => x.Name == name);
         }
 
-        public async Task<bool> UpdateProductAsync(Guid id, Product updateProduct)
+        public async Task SaveChangesAsync()
         {
-            Product? product = await catalogContext.Products.FirstOrDefaultAsync(x => x.Id == id);
-            if (product != null)
-            {
-                product.Name = updateProduct.Name;
-                product.Description = updateProduct.Description;
-                product.Price = updateProduct.Price;
-                product.Quantity = updateProduct.Quantity;
-                product.Category = updateProduct.Category;
-                await catalogContext.SaveChangesAsync();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            await catalogContext.SaveChangesAsync();
         }
 
-        public async Task<bool> UpdateQuantityAsync(Guid id, int quantity)
+        public async Task UpdateProductAsync(Product updateProduct)
         {
-            Product? product = await catalogContext.Products.FirstOrDefaultAsync(x => x.Id == id);
-            if (product != null && product.Quantity >= quantity)
-            {
-                product.Quantity -= quantity;
-                await catalogContext.SaveChangesAsync();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            updateProduct.UpdatedDateUtc = DateTime.UtcNow;
+            catalogContext.Products.Update(updateProduct);
+            await catalogContext.SaveChangesAsync();
         }
     }
 }
