@@ -1,16 +1,17 @@
 using CatalogService.Application.Extensions;
+using CatalogService.Infrastructure;
 using CatalogService.Infrastructure.ConfigurationDB;
 using CatalogService.Presentation.Middleware;
 using Serilog;
-
 
 namespace CatalogService.Presentation
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
+                .WriteTo.Console()
                 .WriteTo.File(@"C:\Users\Миша\Desktop\Полигон\logs\log.txt")
                 .CreateLogger();
 
@@ -22,11 +23,12 @@ namespace CatalogService.Presentation
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Host.UseSerilog();
             builder.Services.AddInfrastructureServices(builder.Configuration);
             builder.Services.AddApplicationServices();
+            builder.Services.AddAsyncInitializer<DbInitializer>();
 
 
-            builder.Host.UseSerilog();
 
 
             var app = builder.Build();
@@ -40,13 +42,15 @@ namespace CatalogService.Presentation
 
             app.UseExceptionHandlerMiddleware();
 
+            app.UseSerilogRequestLogging();
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
             app.MapControllers();
 
-            app.Run();
+            await app.InitAndRunAsync();
         }
     }
 }

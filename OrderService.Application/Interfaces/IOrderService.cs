@@ -3,7 +3,7 @@ namespace OrderService.Application.Interfaces
 {
     public interface IOrderService
     {
-        Task<OrderDTO> CreateOrderAsync(OrderDTO orderDto);
-        Task<OrderDTO> UpdateOrderAsync(Guid id, OrderDTO orderDto);
+        Task<OrderDTO> CreateOrderAsync(List<OrderItemDTO> orderItemDTOs);
+        Task<OrderDTO> UpdateOrderAsync(Guid id, string newStasus);
     }
 }

@@ -1,18 +1,27 @@
+using OrderService.Application.DTOs;
+using OrderService.Application.Extensions;
+using OrderService.Application.Interfaces;
+using OrderService.Infrastructure;
+using OrderService.Infrastructure.Extensions;
+using OrderService.Infrastructure.HttpClients;
 
 namespace OrderService.Presentation
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDatabase(builder.Configuration);
+            builder.Services.AddHttpClient<ICatalogServiceClient, CatalogServiceClient>();
+            builder.Services.AddApplicationServices();
+            builder.Services.AddAsyncInitializer<DbInitializer>();
+            builder.Services.AddProducer<OrderDTO>(builder.Configuration.GetSection("Kafka:Order"));
 
             var app = builder.Build();
 
@@ -30,7 +39,7 @@ namespace OrderService.Presentation
 
             app.MapControllers();
 
-            app.Run();
+            await app.InitAndRunAsync();
         }
     }
 }

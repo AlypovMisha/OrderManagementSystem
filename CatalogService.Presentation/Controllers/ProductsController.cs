@@ -6,15 +6,8 @@ namespace CatalogService.Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class ProductsController(IProductService _productService) : ControllerBase
     {
-        private readonly IProductService _productService;
-
-        public ProductsController(IProductService productService)
-        {
-            _productService = productService;
-        }
-
         [HttpPost]
         public async Task<IActionResult> CreateProduct([FromBody] ProductDTO product)
         {
@@ -50,6 +43,5 @@ namespace CatalogService.Presentation.Controllers
             var product = await _productService.GetProductByIdAsync(id);
             return Ok(product);
         }
-
     }
 }

@@ -1,23 +1,33 @@
-﻿using OrderService.Application.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using OrderService.Application.Interfaces;
 using OrderService.Core.Entities;
+using OrderService.Infrastructure.ConfigurationDB;
 
 namespace OrderService.Infrastructure.Repositories
 {
-    public class OrderRepository : IOrderRepository
+    public class OrderRepository(OrderContext orderContext) : IOrderRepository
     {
-        public Task CreateOrderAsync(Order order)
+        public async Task CreateOrderAsync(Order order)
         {
-            throw new NotImplementedException();
+            await orderContext.Orders.AddAsync(order);
+            await orderContext.SaveChangesAsync();
         }
 
-        public Task SaveChangesAsync()
+        public async Task UpdateOrderAsync(Order updateOrder)
         {
-            throw new NotImplementedException();
+            updateOrder.UpdatedDateUtc = DateTime.UtcNow;
+            orderContext.Orders.Update(updateOrder);
+            await orderContext.SaveChangesAsync();
         }
 
-        public Task UpdateOrderAsync(Order updateProduct)
+        public async Task SaveChangesAsync()
         {
-            throw new NotImplementedException();
+            await orderContext.SaveChangesAsync();
+        }
+
+        public async Task<Order?> GetOrderByIdAsync(Guid id)
+        {
+            return await orderContext.Orders.FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }
