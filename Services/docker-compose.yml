@@ -1,0 +1,35 @@
+services:
+  catalog_service:
+    build:
+      context: ./CatalogService
+      dockerfile: CatalogService.Presentation/Dockerfile
+    ports:
+      - "8082:8080"
+    container_name: catalog_service_container
+    depends_on:
+      - db
+
+  order_service:
+    build:
+      context: ./OrderService
+      dockerfile: OrderService.Presentation/Dockerfile
+    ports:
+      - "8083:8080"
+    container_name: order_service_container
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 210305
+      POSTGRES_DB: OrderManagementDB
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    container_name: db_postgresql_container
+
+volumes:
+  db_data:
