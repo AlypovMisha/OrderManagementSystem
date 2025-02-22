@@ -5,31 +5,49 @@
     <projectFile profileName="IIS Express">CatalogService.Presentation/CatalogService.Presentation.csproj</projectFile>
     <projectFile profileName="http">CatalogService.Presentation/CatalogService.Presentation.csproj</projectFile>
     <projectFile profileName="https">CatalogService.Presentation/CatalogService.Presentation.csproj</projectFile>
+    <projectFile kind="Docker">OrderService.Presentation/OrderService.Presentation.csproj</projectFile>
+    <projectFile profileName="IIS Express">OrderService.Presentation/OrderService.Presentation.csproj</projectFile>
+    <projectFile profileName="http">OrderService.Presentation/OrderService.Presentation.csproj</projectFile>
+    <projectFile profileName="https">OrderService.Presentation/OrderService.Presentation.csproj</projectFile>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="015b4460-1a9f-4662-a2ae-dfbc4e3ee3ad" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatalogService.Application/DTOs/ProductDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatalogService.Application/DTOs/ProductDTO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatalogService.Application/Interfaces/ICatalogRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatalogService.Application/Interfaces/ICatalogRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatalogService.Application/Interfaces/IProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatalogService.Application/Interfaces/IProductService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatalogService.Application/Services/ProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatalogService.Application/Services/ProductService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatalogService.Application/Validations/ProductValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatalogService.Application/Validations/ProductValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatalogService.Infrastructure/Data/CatalogContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatalogService.Infrastructure/Data/Extensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatalogService.Infrastructure/Data/ProductConfiguration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatalogService.Infrastructure/Repositories/CatalogRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatalogService.Infrastructure/Repositories/CatalogRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatalogService.Presentation/CatalogService.Presentation.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CatalogService.Presentation/CatalogService.Presentation.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OrderManagementSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OrderManagementSystem/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OrderManagementSystem/Docker/docker-compose.generated.override.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OrderManagementSystem/Docker/docker-compose.generated.override.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatalogService.Infrastructure/CatalogService.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CatalogService.Infrastructure/CatalogService.Infrastructure.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CatalogService.Presentation/Controllers/ProductsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatalogService.Presentation/Controllers/ProductsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatalogService.Presentation/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/CatalogService.Presentation/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatalogService.Presentation/CUsersМишаDesktopПолигонlogslog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CatalogService.Presentation/CUsersМишаDesktopПолигонlogslog.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CatalogService.Presentation/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatalogService.Presentation/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatalogService.Presentation/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/CatalogService.Presentation/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatalogService.Presentation/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderManagementSystem.sln" beforeDir="false" afterPath="$PROJECT_DIR$/OrderManagementSystem.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService.Application/DTOs/OrderDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService.Application/DTOs/OrderDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService.Application/DTOs/OrderItemDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService.Application/DTOs/OrderItemDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService.Application/Interfaces/IOrderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService.Application/Interfaces/IOrderRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService.Application/Interfaces/IOrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService.Application/Interfaces/IOrderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService.Application/OrderService.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService.Application/OrderService.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService.Application/Services/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService.Application/Services/OrderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService.Core/Entities/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService.Core/Entities/Order.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService.Core/Entities/OrderItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService.Core/Entities/OrderItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService.Infrastructure/OrderService.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService.Infrastructure/OrderService.Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService.Infrastructure/Repositories/OrderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService.Infrastructure/Repositories/OrderRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService.Presentation/Controllers/WeatherForecastController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService.Presentation/OrderService.Presentation.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService.Presentation/OrderService.Presentation.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService.Presentation/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService.Presentation/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService.Presentation/WeatherForecast.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService.Presentation/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService.Presentation/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,6 +56,10 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
@@ -49,21 +71,39 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.CatalogService.Presentation: http.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.OrderService.Presentation: http.executor&quot;: &quot;Debug&quot;,
+    &quot;Docker.CatalogService.Presentation.catalog_service: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.CatalogService.Presentation.catalog_service_webapi: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.CatalogService.Presentation.db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.CatalogService.Presentation.migrations: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.CatalogService.Presentation.order_service: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.CatalogService.Presentation/Dockerfile.executor&quot;: &quot;Run&quot;,
     &quot;Docker.CatalogService.Presentation: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.catalog_service: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.kafka: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.order_service: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.zookeeper: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;proba3&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;OrderServiceBranch&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;PLAIN_TEXT&quot;
+    ]
   }
 }</component>
-  <component name="RunManager" selected="Docker.CatalogService.Presentation: Compose Deployment">
+  <component name="RunManager" selected="Docker.docker-compose.yml.kafka: Compose Deployment">
     <configuration name="CatalogService.Presentation: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/CatalogService.Presentation/CatalogService.Presentation.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -109,14 +149,50 @@
         <option name="Build" />
       </method>
     </configuration>
-    <configuration name="CatalogService.Presentation: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="CatalogService.Presentation/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
-      <method v="2" />
+    <configuration name="OrderService.Presentation: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/OrderService.Presentation/OrderService.Presentation.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="OrderService.Presentation: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/OrderService.Presentation/OrderService.Presentation.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="http" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="OrderService.Presentation: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/OrderService.Presentation/OrderService.Presentation.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="https" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
     </configuration>
     <configuration name="CatalogService.Presentation/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
       <deployment type="dockerfile">
@@ -130,32 +206,16 @@
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="true" />
       <method v="2" />
     </configuration>
-    <configuration name="CatalogService.Presentation.catalog_service_webapi: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
+    <configuration name="OrderService.Presentation/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
         <settings>
-          <option name="services">
-            <list>
-              <option value="catalog_service_webapi" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="CatalogService.Presentation/docker-compose.yml" />
+          <option name="containerName" value="orderservice.presentation" />
+          <option name="contextFolderPath" value="C:\Users\Миша\Desktop\Полигон\OrderManagementSystem" />
+          <option name="publishAllPorts" value="true" />
+          <option name="sourceFilePath" value="OrderService.Presentation/Dockerfile" />
         </settings>
       </deployment>
-      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
-      <method v="2" />
-    </configuration>
-    <configuration name="CatalogService.Presentation.db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="db" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="CatalogService.Presentation/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="true" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
@@ -172,11 +232,78 @@
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.catalog_service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="catalog_service" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.kafka: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="kafka" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.order_service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="order_service" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.zookeeper: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="zookeeper" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.CatalogService.Presentation: Compose Deployment" />
-        <item itemvalue="Docker.CatalogService.Presentation.db: Compose Deployment" />
-        <item itemvalue="Docker.CatalogService.Presentation.catalog_service_webapi: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.kafka: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.order_service: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.zookeeper: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.catalog_service: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -194,12 +321,38 @@
       <workItem from="1736783827900" duration="248000" />
       <workItem from="1736784246942" duration="1464000" />
       <workItem from="1736872628807" duration="1389000" />
+      <workItem from="1738417854049" duration="117000" />
+      <workItem from="1738658363908" duration="65000" />
+      <workItem from="1738658440137" duration="585000" />
+      <workItem from="1738661854638" duration="2317000" />
+      <workItem from="1738674300982" duration="908000" />
+      <workItem from="1738958202277" duration="640000" />
+      <workItem from="1739001104225" duration="1640000" />
+      <workItem from="1739003377336" duration="1443000" />
+      <workItem from="1739038763727" duration="2724000" />
+      <workItem from="1739122650966" duration="2590000" />
+      <workItem from="1739294826833" duration="1522000" />
+      <workItem from="1739299749288" duration="1715000" />
+      <workItem from="1739303663589" duration="407000" />
+      <workItem from="1739345916307" duration="4549000" />
+      <workItem from="1739351494621" duration="198000" />
+      <workItem from="1739351718505" duration="254000" />
+      <workItem from="1739351984641" duration="921000" />
+      <workItem from="1739385020677" duration="1749000" />
+      <workItem from="1739700985159" duration="4323000" />
+      <workItem from="1739784661559" duration="2552000" />
+      <workItem from="1739874842891" duration="1399000" />
+      <workItem from="1739902505088" duration="3829000" />
+      <workItem from="1739946286606" duration="4364000" />
+      <workItem from="1740158064355" duration="4523000" />
+      <workItem from="1740222239499" duration="8181000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

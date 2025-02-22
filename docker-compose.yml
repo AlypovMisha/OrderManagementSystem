@@ -1,5 +1,55 @@
 services:
-  catalog_service_webapi:
+  catalog_service:
     build:
-     context: .
-     dockerfile: Dockerfile
+      context: .
+      dockerfile: CatalogService.Presentation/Dockerfile
+    ports:
+      - "8082:8080"
+    container_name: catalog_service_container
+    depends_on:
+      - db
+
+  order_service:
+    build:
+      context: .
+      dockerfile: OrderService.Presentation/Dockerfile
+    ports:
+      - "8083:8080"
+    container_name: order_service_container
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 210305
+      POSTGRES_DB: OrderManagementDB
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    container_name: db_postgresql_container
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL: PLAINTEXT
+      KAFKA_DEFAULT_REPLICATION_FACTOR: 1
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    ports:
+      - "9092:9092"
+
+volumes:
+  db_data:
